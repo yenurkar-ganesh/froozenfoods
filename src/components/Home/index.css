@@ -1,0 +1,114 @@
+.home-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 12rem;
+}
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin: 0.5rem auto;
+}
+.search-banner-image {
+  width: 50%;
+  border-radius: 47px;
+}
+.search-banner-info {
+  margin: 0px;
+  padding: 0;
+  text-align: center;
+  line-height: 60px;
+}
+.search-banner-info h1 {
+  margin: 0;
+  padding: 0;
+}
+.search-input {
+  width: 90%;
+  border-radius: 4px;
+  padding: 8px 24px;
+  background-color: #f2f7f2;
+  color: black;
+  font-size: 17px;
+  border: 2px solid rgba(0, 123, 255, 0.9);
+  outline: none;
+}
+.home-and-restaurant-section {
+  width: 100%;
+  margin: 2rem auto;
+}
+.meta-banner h2 {
+  margin: 2px 0;
+}
+.meta-sort-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sort-by-select {
+  padding: 8px 24px;
+  border-radius: 5px;
+  background-color: #f2f7f2;
+  font-weight: 500;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+.restaurant-card-list-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  height: 80vh;
+  margin: 2.5rem 0px;
+}
+.loader-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.restro-filter-container {
+  margin: 1.5rem auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.filter-card {
+  list-style: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+.filter-card:hover {
+  box-shadow: 0 4px 12px rgba(255, 117, 140, 0.5);
+}
+.filter-card-btn {
+  font-family: "Poppins", sans-serif;
+  padding: 8px 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #788bff;
+  background-color: #f2f7f2;
+  color: #1d1d1d;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.active-filter-btn:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 10px rgba(108, 99, 255, 0.7);
+}
+.no-restaurant-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+  flex-direction: column;
+}

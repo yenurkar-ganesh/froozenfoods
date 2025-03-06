@@ -1,0 +1,152 @@
+.restaurant-detailed-card-container {
+  width: 100%;
+}
+.restaurant-detailed-card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 12rem;
+}
+.loader-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.restaurant-banner {
+  background-image: url("https://res.cloudinary.com/dq92tiimk/image/upload/v1741200472/Tasty-Kitchen-App/Icons/local-food-meal-composition-with-copy-space_dhmvfz.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  object-fit: cover;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 8px 50px;
+  color: #f2f7f2;
+  border-radius: 48px;
+  display: flex;
+  justify-content: center;
+}
+.restaurant-detailed-image {
+  width: 380px;
+  height: 40vh;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.restaurant-detailed-info h1 {
+  font-size: 36px;
+  font-weight: 900;
+  margin: 5px;
+  line-height: 55px;
+}
+.restaurant-detailed-info {
+  background-color: #f2f7f288;
+  border-radius: 20px;
+  padding: 32px 20px 20px 32px;
+  color: black;
+}
+.restaurant-detailed-info p {
+  margin: 3px;
+}
+.rating-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+.vertical-bar {
+  background-color: #f2f7f2;
+  height: 10vh;
+  width: 1px;
+}
+.rating,
+.cost-for-two {
+  font-size: 16px;
+  font-weight: 600;
+}
+.responses,
+.cost-for-two-info {
+  font-size: 14px;
+  color: #f2f7f2e4;
+}
+.restaurant-menu-container {
+  margin-top: 5rem;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+.line {
+  position: relative;
+}
+.menu-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-logo {
+  width: 720px;
+}
+.menu-list-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 2rem;
+}
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 200px;
+}
+.filters-list {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.filter-item {
+  cursor: pointer;
+  list-style: none;
+}
+.filter-btn {
+  font-family: "Poppins", sans-serif;
+  padding: 8px 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #788bff;
+  background-color: #f2f7f2;
+  color: #1d1d1d;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.sort-by-select {
+  padding: 10px;
+  color: #1d1d1d;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.sort-by-select:hover {
+  box-shadow: 0 4px 12px rgba(255, 117, 140, 0.5);
+}
+
+.sort-by-select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+}
+
+.filter-item {
+  background: #fff;
+  padding: 10px;
+}
