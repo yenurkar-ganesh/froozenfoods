@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import "./index.css";
+import CartContext from "../../context/CartContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,6 +11,8 @@ const Navbar = () => {
     Cookies.remove("jwt_token");
     navigate("/login");
   };
+
+  const { cartList } = useContext(CartContext);
 
   return (
     <div className="navbar-container">
@@ -28,6 +32,7 @@ const Navbar = () => {
             <Link className="nav-link" to="/cart">
               Cart
             </Link>
+            <p className="cart-count">{cartList.length} </p>
           </li>
           <li className="nav-list-item">
             <button

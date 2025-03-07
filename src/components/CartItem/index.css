@@ -1,0 +1,54 @@
+.cartItem {
+  width: 1080px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #f2f7f2;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+.cart-item-header-info {
+  display: flex;
+  gap: 20px;
+}
+.cart-item-img {
+  width: 135px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.cart-item-name-foodtype {
+  display: flex;
+  gap: 10px;
+  margin: 3px 0;
+}
+.cart-item-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+.cart-item-food-type {
+  margin: 0;
+}
+.cart-item-rating {
+  font-size: 16px;
+  margin: 0;
+}
+.cart-item-cost {
+  font-size: 16px;
+  margin: 0;
+}
+.cart-item-quantity-section {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.remove-cart-item-btn {
+  padding: 8px 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: white;
+}

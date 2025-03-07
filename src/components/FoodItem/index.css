@@ -41,3 +41,20 @@
   margin: 14px 0;
   cursor: pointer;
 }
+.counter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+.vertical-bar-black {
+  background-color: black;
+  width: 1px;
+  height: 2.2rem;
+}
+.counter-btn {
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}

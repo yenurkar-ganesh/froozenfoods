@@ -14,6 +14,52 @@ function App() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
+  const addCartItem = (item) => {
+    setCartList((prevList) => {
+      const existingItem = prevList.find((eachItem) => eachItem.id === item.id);
+      if (existingItem) {
+        return prevList.map((eachItem) =>
+          eachItem.id === item.id
+            ? { ...eachItem, quantity: eachItem.quantity + 1}
+            : eachItem
+        );
+      }
+      return [...prevList, item];
+    });
+  };
+
+  const removeAllCartItems = () => {
+    setCartList([]);
+  };
+
+  const removeCartItem = (id) => {
+    setCartList((prevList) =>
+      prevList.filter((eachItem) => eachItem.id !== id)
+    );
+  };
+
+  const incrementCartItemQuantity = (id) => {
+    setCartList((prevList) =>
+      prevList.map((eachItem) =>
+        eachItem.id === id
+          ? { ...eachItem, quantity: eachItem.quantity + 1 }
+          : eachItem
+      )
+    );
+  };
+
+  const decrementCartItemQuantity = (id) => {
+    setCartList((prevList) =>
+      prevList
+        .map((eachItem) =>
+          eachItem.id === id
+            ? { ...eachItem, quantity: eachItem.quantity - 1 }
+            : eachItem
+        )
+        .filter((eachItem) => eachItem.quantity > 0)
+    );
+  };
+
   useEffect(() => {
     localStorage.setItem("cartList", JSON.stringify(cartList));
   }, [cartList]);
@@ -22,6 +68,11 @@ function App() {
     <CartContext.Provider
       value={{
         cartList,
+        addCartItem,
+        removeCartItem,
+        incrementCartItemQuantity,
+        decrementCartItemQuantity,
+        removeAllCartItems,
       }}
     >
       <BrowserRouter>
