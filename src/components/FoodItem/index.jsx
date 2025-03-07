@@ -34,25 +34,28 @@ const FoodItem = ({ eachItem }) => {
   };
 
   const decrementHandler = () => {
-    if (quantityInCart?.quantity > 1) {
+    if (quantityInCart && quantityInCart.quantity > 1) {
+      toast.dismiss("decrement-toast");
       decrementCartItemQuantity(eachItem.id);
       toast.info(`${eachItem.name} quantity decreased by 1`, {
         toastId: "decrement-toast",
       });
+      setQuantity((prevQuantity) => prevQuantity - 1);
     } else if (quantityInCart && quantityInCart.quantity === 1) {
+      toast.dismiss("remove-toast");
       removeCartItem(eachItem.id);
       toast.error(`${eachItem.name} removed from cart`, {
         toastId: "remove-toast",
       });
       setQuantity(0);
+    } else if (!quantityInCart) {
+      setQuantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
     }
   };
 
   const onAddToCartHandler = () => {
-    if (quantity > 0) {
-      addCartItem({ ...eachItem, quantity });
-      toast.success(`${eachItem.name} added to cart`);
-    }
+    addCartItem({ ...eachItem, quantity });
+    toast.success(`${eachItem.name} added to cart`);
   };
 
   return (
@@ -73,30 +76,31 @@ const FoodItem = ({ eachItem }) => {
         <p className="menu-item-rating">⭐ {eachItem.rating} </p>
 
         <section className="counter-section">
-          <button
-            onClick={decrementHandler}
-            type="button"
-            className="counter-btn"
-            disabled={quantity === 0}
-          >
-            -
-          </button>
-          <p className="counter-value">{quantity}</p>
-          <button
-            onClick={incrementHandler}
-            type="button"
-            className="counter-btn"
-          >
-            +
-          </button>
-          {quantityInCart ? null : (
+          {quantityInCart ? (
             <>
-              <div className="vertical-bar-black"></div>
+              <button
+                onClick={decrementHandler}
+                type="button"
+                className="counter-btn"
+                disabled={quantity === 0}
+              >
+                -
+              </button>
+              <p className="counter-value">{quantity}</p>
+              <button
+                onClick={incrementHandler}
+                type="button"
+                className="counter-btn"
+              >
+                +
+              </button>
+            </>
+          ) : (
+            <>
               <button
                 onClick={onAddToCartHandler}
                 className="add-to-cart-btn"
                 type="button"
-                disabled={quantity === 0}
               >
                 Add to Cart
               </button>
@@ -105,7 +109,7 @@ const FoodItem = ({ eachItem }) => {
         </section>
       </div>
       <ToastContainer
-        position="top-left"
+        position="bottom-left"
         autoClose={300}
         hideProgressBar={false}
         newestOnTop={false}

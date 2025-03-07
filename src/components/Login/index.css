@@ -1,13 +1,9 @@
 .login-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 100px;
-  margin: 0;
-  padding: 0;
-  background-color: #fefae0;
-  width: 100%;
-  margin: 0px auto;
+  gap: 200px;
+  height: 100vh;
 }
 .login-banner {
   width: 500px;

@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 .cart-header {
-  margin-top: 12rem;
+  margin-top: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,7 @@
   width: 100%;
   flex-wrap: wrap;
   gap: 24px;
-  margin: 2.5rem 0px;
+  margin: .5rem 0px;
 }
 .no-order-container {
   display: flex;

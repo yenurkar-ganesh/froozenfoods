@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import "./index.css";
+import { BsBookmarkHeartFill } from "react-icons/bs";
 import CartContext from "../../context/CartContext";
+import "./index.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -33,6 +34,11 @@ const Navbar = () => {
               Cart
             </Link>
             <p className="cart-count">{cartList.length} </p>
+          </li>
+          <li className="nav-list-item">
+            <Link className="nav-link" to="/wishlist">
+              <BsBookmarkHeartFill size={20} />
+            </Link>
           </li>
           <li className="nav-list-item">
             <button

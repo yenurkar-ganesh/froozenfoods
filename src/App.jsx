@@ -14,13 +14,31 @@ function App() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
+  const [wishList, setWishList] = useState(() => {
+    const storedWishlist = localStorage.getItem("wishList");
+    return storedWishlist ? JSON.parse(storedWishlist) : [];
+  });
+
+  const addWishListItem = (wishListItem) => {
+    setWishList((prevList) => {
+      const isItemExist = prevList.find((item) => item.id === wishListItem.id);
+      return isItemExist ? prevList : [...prevList, wishListItem];
+    });
+  };
+
+  const removeWishListItem = (itemId) => {
+    setWishList((prevList) => {
+      return prevList.filter((eachItem) => eachItem.id !== itemId);
+    });
+  };
+
   const addCartItem = (item) => {
     setCartList((prevList) => {
       const existingItem = prevList.find((eachItem) => eachItem.id === item.id);
       if (existingItem) {
         return prevList.map((eachItem) =>
           eachItem.id === item.id
-            ? { ...eachItem, quantity: eachItem.quantity + 1}
+            ? { ...eachItem, quantity: eachItem.quantity + 1 }
             : eachItem
         );
       }
@@ -62,12 +80,14 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("cartList", JSON.stringify(cartList));
-  }, [cartList]);
+    localStorage.setItem("wishList", JSON.stringify(wishList));
+  }, [cartList, wishList]);
 
   return (
     <CartContext.Provider
       value={{
         cartList,
+        wishList,
         addCartItem,
         removeCartItem,
         incrementCartItemQuantity,

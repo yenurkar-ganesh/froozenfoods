@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import CartContext from "../../context/CartContext";
 import CartItem from "../CartItem";
+import CartSummery from "../CartSummary";
 
 const CartListView = () => {
-  const {
-    cartList,
-    removeAllCartItems,
-  } = useContext(CartContext);
+  const { cartList, removeAllCartItems } = useContext(CartContext);
 
   if (!Array.isArray(cartList) || cartList.length === 0) {
     return (
@@ -43,6 +41,7 @@ const CartListView = () => {
           <CartItem key={eachItem.id} eachItem={eachItem} />
         ))}
       </ul>
+      <CartSummery />
     </div>
   );
 };
