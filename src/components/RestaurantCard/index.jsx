@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import { RiHeart3Line } from "react-icons/ri";
 import "./index.css";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 
 const RestaurantCard = ({ eachRestaurant }) => {
+  const { wishList, addWishListItem, removeWishListItem } =
+    useContext(CartContext);
+
   const {
     id,
     hasOnlineDelivery,
@@ -11,6 +17,19 @@ const RestaurantCard = ({ eachRestaurant }) => {
     name,
     userRating,
   } = eachRestaurant;
+
+  const isItemExistInWishlist = wishList.some((item) => item.id === id);
+
+  const toggleWishlistHandler = () => {
+    if (isItemExistInWishlist) {
+      removeWishListItem(id);
+      console.log(`${name} removed from wishlist`);
+    } else {
+      addWishListItem(eachRestaurant);
+      console.log(`${name} added to wishlist`);
+    }
+  };
+
   return (
     <li className="card-item">
       <Link to={`/restaurant/${id}`} className="card-link">
@@ -28,12 +47,18 @@ const RestaurantCard = ({ eachRestaurant }) => {
               </p>
             </div>
           </div>
-          <p className="card-location">{location} </p>
+          <p className="card-location">{location}</p>
           {hasOnlineDelivery && (
             <p className="free-delivery"> 🚲 FREE DELIVERY</p>
           )}
         </div>
       </Link>
+      <button onClick={toggleWishlistHandler} className="like-button">
+        <RiHeart3Line
+          size={25}
+          className={isItemExistInWishlist ? "active-like-btn" : "like-icon"}
+        />
+      </button>
     </li>
   );
 };

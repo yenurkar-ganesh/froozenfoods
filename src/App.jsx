@@ -7,6 +7,7 @@ import RestaurantDetailedCard from "./components/RestaurantDetailedCard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import CartContext from "./context/CartContext";
 import "./App.css";
+import WishList from "./components/Wishlist";
 
 function App() {
   const [cartList, setCartList] = useState(() => {
@@ -93,6 +94,8 @@ function App() {
         incrementCartItemQuantity,
         decrementCartItemQuantity,
         removeAllCartItems,
+        addWishListItem,
+        removeWishListItem,
       }}
     >
       <BrowserRouter>
@@ -119,6 +122,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Cart />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/products/wishlist"
+            element={
+              <ProtectedRoute>
+                <WishList />
               </ProtectedRoute>
             }
           />

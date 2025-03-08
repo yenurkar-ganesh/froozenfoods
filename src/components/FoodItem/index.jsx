@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const FoodItem = ({ eachItem }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const {
     cartList,
     addCartItem,
@@ -54,7 +54,8 @@ const FoodItem = ({ eachItem }) => {
   };
 
   const onAddToCartHandler = () => {
-    addCartItem({ ...eachItem, quantity });
+    addCartItem({ ...eachItem, quantity: 1 });
+    setQuantity((prevQuantity) => prevQuantity + 1);
     toast.success(`${eachItem.name} added to cart`);
   };
 

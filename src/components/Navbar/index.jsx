@@ -36,7 +36,7 @@ const Navbar = () => {
             <p className="cart-count">{cartList.length} </p>
           </li>
           <li className="nav-list-item">
-            <Link className="nav-link" to="/wishlist">
+            <Link className="nav-link" to="/products/wishlist">
               <BsBookmarkHeartFill size={20} />
             </Link>
           </li>

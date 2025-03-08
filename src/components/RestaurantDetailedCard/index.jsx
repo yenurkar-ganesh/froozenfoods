@@ -79,7 +79,7 @@ const RestaurantDetailedCard = () => {
         const updatedRestaurantData = updatedData(data);
         setRestaurantData(updatedRestaurantData);
         setFilteredRestaurantMenu(updatedRestaurantData.foodItems);
-        console.log(updatedRestaurantData);
+        // console.log(updatedRestaurantData);
       }
     } catch (error) {
       console.error(`Error while fetching restaurant data: ${error}`);
@@ -91,6 +91,8 @@ const RestaurantDetailedCard = () => {
   useEffect(() => {
     getDetailedData();
   }, [id]);
+
+  // console.log(filteredRestaurantMenu);
 
   return (
     <div className="restaurant-detailed-card-container">
@@ -156,9 +158,17 @@ const RestaurantDetailedCard = () => {
               </select>
             </div>
             <ul className="menu-list-section">
-              {filteredRestaurantMenu.map((eachItem) => (
-                <FoodItem key={eachItem.id} eachItem={eachItem} />
-              ))}
+              {filteredRestaurantMenu.length === 0 ? (
+                <div className="no-food-items-container">
+                  <h1>
+                    `When there’s no food on the menu, make your own feast.`
+                  </h1>
+                </div>
+              ) : (
+                filteredRestaurantMenu.map((eachItem) => (
+                  <FoodItem key={eachItem.id} eachItem={eachItem} />
+                ))
+              )}
             </ul>
             <div className="menu-header">
               <img

@@ -24,9 +24,7 @@ const CartSummery = () => {
           <h2>Cart Summery</h2>
           <div className="total-summery">
             <p>Total Cart Items : {totalQuantity} </p>
-            <p>
-              <h3>Total Price - ₹ {totalPrice}/-</h3>{" "}
-            </p>
+            <h3>Total Price - ₹ {totalPrice}/-</h3>
           </div>
         </section>
       </div>

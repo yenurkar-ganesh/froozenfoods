@@ -1,0 +1,37 @@
+.wishlist-section {
+  width: 90%;
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.wishlist-section h1 {
+  margin-top: 10rem;
+  align-self: flex-start;
+}
+.wishlist-item-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.wishlist-no-item-container {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  text-align: center;
+}
+.wishlist-no-item-container h1{
+  margin-top: 10px;
+}
+.empty-wishlist-logo {
+  width: 50%;
+  border-radius: 50%;
+}
